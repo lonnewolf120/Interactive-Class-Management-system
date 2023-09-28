@@ -1,0 +1,24 @@
+---------------------------------------------------
+Here are the ownership and the certification details
+of the Visualizer 1.0
+---------------------------------------------------
+
+app_name - 						Visualizer
+app_alias - 					Visualizer
+app_author_name - 				CodenameX
+app_author_organizational - 	CodenameX
+app_author_organization - 		CodenameX
+app_author_locality - 			CodenameX
+app_author_state - 				-
+app_author_country - 			Bangladesh
+app_password - 					srZLhdzAmvly
+app_versionName - 				versionName "1.0"
+app_versionCode - 				100
+
+---------------------------------------------------
+The certification was created by WebIntoApp.com at
+the Monday 25th of September 2023 11:35:27 AM
+
+https://www.webintoapp.com
+---------------------------------------------------
+
