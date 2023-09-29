@@ -9,6 +9,7 @@ module com.codenamex.smartclassroom.smartclassroom {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires com.almasb.fxgl.all;
 
     opens com.codenamex.smartclassroom.smartclassroom to javafx.fxml;
     exports com.codenamex.smartclassroom.smartclassroom;
