@@ -1,4 +1,4 @@
-package com.codenamex.smartclassroom.smartclassroom;
+package codenamex.smc;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

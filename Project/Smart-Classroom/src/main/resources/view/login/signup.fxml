@@ -19,7 +19,7 @@
          <children>
             <ImageView fitHeight="456.0" fitWidth="364.0" layoutX="-3.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../../images/signup.png" />
+                  <Image url="@../../images/signup.png" />
                </image>
                <effect>
                   <DropShadow height="51.76" radius="76.19" width="255.0">

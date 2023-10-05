@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="sample.Dashboard">
+<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dashboard">
    <left>
-      <Pane prefHeight="622.0" prefWidth="162.0" style="-fx-background-color: E9E9E9;" stylesheets="@../../../../../../../../../../todo-list-JavaFx-main/todo-list-JavaFx-main/src/sample/Style/style.css" BorderPane.alignment="CENTER">
+      <Pane prefHeight="622.0" prefWidth="162.0" style="-fx-background-color: E9E9E9;" stylesheets="@../../../../../../../todo-list-JavaFx-main/todo-list-JavaFx-main/src/sample/Style/style.css" BorderPane.alignment="CENTER">
          <children>
             <VBox layoutX="9.0" layoutY="52.0" prefHeight="408.0" prefWidth="148.0" spacing="15.0">
                <children>
@@ -27,7 +27,7 @@
                      <graphic>
                         <ImageView fitHeight="37.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/Todo%20List.png" />
+                              <Image url="@../images/Logos/Todo%20List.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -39,7 +39,7 @@
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/Right%20Handed.png" />
+                              <Image url="@../images/Logos/Right%20Handed.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -51,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/Bookmark.png" />
+                              <Image url="@../images/Logos/Bookmark.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -63,7 +63,7 @@
                      <graphic>
                         <ImageView fitHeight="38.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/Classroom2.png" />
+                              <Image url="@../images/Logos/Classroom2.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -75,7 +75,7 @@
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/Typewriter%20With%20Paper.png" />
+                              <Image url="@../images/Logos/Blog.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -87,7 +87,7 @@
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/User.png" />
+                              <Image url="@../images/Logos/User.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -99,7 +99,7 @@
                      <graphic>
                         <ImageView fitHeight="43.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logos/Trash.png" />
+                              <Image url="@../images/Logos/Trash.png" />
                            </image>
                         </ImageView>
                      </graphic>

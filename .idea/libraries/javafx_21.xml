@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="javafx-sdk-21">
+  <library name="javafx-21">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../Java/openjfx-21_windows-x64_bin-sdk/javafx-sdk-21/lib" />
     </CLASSES>
