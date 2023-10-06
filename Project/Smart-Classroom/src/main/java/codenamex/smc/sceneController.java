@@ -1,12 +1,16 @@
 package codenamex.smc;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import material.Material;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
@@ -62,7 +66,19 @@ public class sceneController {
     }
 
     public void closeButton(ActionEvent e) throws IOException {
-        stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    public void loginSubmit(ActionEvent e) throws  IOException{
+
+    }
+    @FXML
+    private Label passwordChangeTextfield;
+    private TextField username;
+    private MFXPasswordField passwordField;
+    public void ForgotPasswordSubmit(ActionEvent e) throws IOException{
+//        TextField passwordChangeTextfield = new TextField();
+        passwordChangeTextfield.setText("Check your mail, after confirmation the password will be changed");
     }
 }

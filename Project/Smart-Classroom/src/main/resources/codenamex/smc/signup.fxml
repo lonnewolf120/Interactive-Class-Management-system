@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0" style="-fx-background-color: #333333; -fx-border-color: orange;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -35,19 +36,18 @@
       <Pane prefHeight="200.0" prefWidth="200.0" />
       <Pane layoutX="386.0" layoutY="31.0" prefHeight="398.0" prefWidth="348.0">
          <children>
-            <Label layoutX="59.0" layoutY="103.0" text="Username" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <Label layoutX="57.0" layoutY="90.0" text="Username" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold Italic" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="56.0" layoutY="124.0" prefHeight="26.0" prefWidth="258.0" />
-            <Label layoutX="61.0" layoutY="214.0" text="Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <TextField layoutX="54.0" layoutY="111.0" prefHeight="26.0" prefWidth="258.0" />
+            <Label layoutX="59.0" layoutY="201.0" text="Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold Italic" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="56.0" layoutY="234.0" prefHeight="26.0" prefWidth="258.0" />
-            <MFXButton buttonType="RAISED" layoutX="139.0" layoutY="335.0" prefHeight="26.0" prefWidth="88.0" rippleAnimateShadow="true" rippleAnimationSpeed="4.0" rippleBackgroundOpacity="1.0" text="Submit">
+            <MFXButton buttonType="RAISED" layoutX="137.0" layoutY="340.0" prefHeight="26.0" prefWidth="88.0" rippleAnimateShadow="true" rippleAnimationSpeed="4.0" rippleBackgroundOpacity="1.0" text="Submit">
                <font>
                   <Font name="Segoe UI Semibold" size="12.0" />
                </font>
@@ -109,29 +109,30 @@
                   </LinearGradient>
                </textFill>
             </MFXButton>
-            <Label layoutX="59.0" layoutY="157.0" text="Email" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <Label layoutX="57.0" layoutY="144.0" text="Email" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold Italic" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="55.0" layoutY="178.0" prefHeight="26.0" prefWidth="258.0" />
-            <Label layoutX="60.0" layoutY="270.0" text="Confirm Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <TextField layoutX="53.0" layoutY="165.0" minHeight="26.0" minWidth="258.0" prefHeight="26.0" prefWidth="258.0" />
+            <Label layoutX="56.0" layoutY="253.0" text="Confirm Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold Italic" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="57.0" layoutY="291.0" prefHeight="26.0" prefWidth="258.0" />
             
                         <Label alignment="CENTER" layoutX="14.0" layoutY="-9.0" prefHeight="47.0" prefWidth="316.0" text="Signup" textAlignment="CENTER" textFill="#f7f2e7" wrapText="true">
                <font>
                   <Font name="Segoe UI Black" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="64.0" onMouseClicked="#switchToLogin" onMousePressed="#switchToLogin" prefHeight="17.0" prefWidth="171.0" text="Have an Account? Login" textFill="#ae9a91">
+            <Label layoutX="57.0" layoutY="51.0" onMouseClicked="#switchToLogin" onMousePressed="#switchToLogin" prefHeight="17.0" prefWidth="171.0" text="Have an Account? Login" textFill="#ae9a91">
                <font>
                   <Font name="Segoe UI Black" size="12.0" />
                </font>
             </Label>
+            <MFXPasswordField allowPaste="true" borderGap="6.0" floatMode="DISABLED" floatingTextGap="3.0" graphicTextGap="6.0" layoutX="54.0" layoutY="220.0" measureUnitGap="3.0" minHeight="27.0" prefHeight="27.0" prefWidth="258.0" />
+            <MFXPasswordField allowPaste="true" borderGap="6.0" floatMode="DISABLED" floatingTextGap="3.0" graphicTextGap="6.0" layoutX="54.0" layoutY="275.0" measureUnitGap="3.0" minHeight="27.0" prefHeight="27.0" prefWidth="258.0" />
          </children>
       </Pane>
       <JFXButton layoutX="669.0" onAction="#closeButton" prefHeight="42.0" prefWidth="107.0" textFill="#333333" wrapText="true">
