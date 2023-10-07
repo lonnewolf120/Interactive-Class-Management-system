@@ -1,5 +1,6 @@
 package codenamex.smc;
 
+import io.github.palexdev.materialfx.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import material.Material;
 import javafx.stage.StageStyle;
-
-import java.io.IOException;
+ import java.io.IOException;
 import java.util.Objects;
 
 public class sceneController {
@@ -75,8 +74,16 @@ public class sceneController {
     }
     @FXML
     private Label passwordChangeTextfield;
+    private Label afterLoginText;
     private TextField username;
-    private MFXPasswordField passwordField;
+    private MFXPasswordField password;
+    public void loginSubmitButton(ActionEvent e) throws IOException{
+        if(username.getText().isBlank() && password.getText().isBlank())
+        {
+            afterLoginText.setStyle("-fx-text-fill: red;");
+            afterLoginText.setText("Please enter your credentials");
+        }
+    }
     public void ForgotPasswordSubmit(ActionEvent e) throws IOException{
 //        TextField passwordChangeTextfield = new TextField();
         passwordChangeTextfield.setText("Check your mail, after confirmation the password will be changed");
