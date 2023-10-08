@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="154fe2e0-bae4-4f7b-b857-18224f22f3ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataStructureVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataStructureVisualizer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataStructureVisualizer/QueueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataStructureVisualizer/QueueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataStructureVisualizer/StackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataStructureVisualizer/StackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DataStructureVisualizer/Queue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DataStructureVisualizer/Queue.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DataStructureVisualizer/Stack.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DataStructureVisualizer/Stack.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Smart-Classroom/src/main/java/codenamex/smc/sceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Smart-Classroom/src/main/java/codenamex/smc/sceneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +21,14 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -42,7 +44,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;G:/JavaWrkIntellij/demo&quot;
   }
 }</component>
