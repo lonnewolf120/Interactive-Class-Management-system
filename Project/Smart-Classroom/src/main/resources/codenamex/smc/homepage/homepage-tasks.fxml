@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <Pane prefHeight="622.0" prefWidth="162.0" style="-fx-background-color: E9E9E9;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="9.0" layoutY="52.0" prefHeight="408.0" prefWidth="148.0" spacing="15.0">
+               <children>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #666666;" text="TASKS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/TodoList.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="25.0" prefWidth="173.0" text="NOTES">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/notes.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="46.0" prefWidth="176.0" text="NOTICE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/notice.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="25.0" prefWidth="173.0" text="TUTORIALS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Classroom2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="25.0" prefWidth="173.0" text="EDITOR">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Blog.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="25.0" prefWidth="173.0" text="USER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/User.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" prefHeight="25.0" prefWidth="173.0" text="TRASH">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="43.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Trash.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <ListView layoutX="9.0" layoutY="481.0" prefHeight="25.0" prefWidth="145.0" style="-fx-background-color: E9E9E9;" />
+            <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="544.0" prefHeight="52.0" prefWidth="59.0" style="-fx-background-color: #4DBCFF; -fx-background-radius: 10px;" text="+" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+         </children></Pane>
+   </left>
+   <top>
+      <Pane prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: dodgerblue; -fx-alignment: center;" styleClass="Top-Pane" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane hgap="5.0" layoutX="4.0" layoutY="5.0" prefHeight="17.0" prefWidth="67.0" />
+            <Label contentDisplay="CENTER" layoutX="454.0" layoutY="-3.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="23.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </top>
+   <center>
+      <AnchorPane>
+         <StackPane fx:id="contentArea" layoutX="-42.0" prefHeight="622.0" prefWidth="835.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <BorderPane prefHeight="200.0" prefWidth="200.0">
+                  <top>
+                     <Pane prefHeight="163.0" prefWidth="838.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+                        <children>
+                           <TextField fx:id="descriptionText" focusTraversable="false" layoutX="15.0" layoutY="20.0" onMouseClicked="#addTaskClicked" prefHeight="66.0" prefWidth="463.0" promptText="Write the description of your new to-do task here ..." />
+                           <CheckBox fx:id="noDueDateCheckbox" focusTraversable="false" layoutX="500.0" layoutY="63.0" mnemonicParsing="false" onAction="#noDueDateSelected" text="Task with no due date">
+                              <font>
+                                 <Font name="Gadugi Bold" size="12.0" />
+                              </font>
+                           </CheckBox>
+                           <CheckBox fx:id="urgentCheckbox" focusTraversable="false" layoutX="500.0" layoutY="95.0" mnemonicParsing="false" onAction="#urgentSelected" text="Mark as urgent" />
+                           <Button fx:id="completeButton" focusTraversable="false" layoutX="680.0" layoutY="63.0" mnemonicParsing="false" onAction="#markAsComplete" prefHeight="27.0" prefWidth="138.0" text="Mark as complete" textFill="#000000c5">
+                              <font>
+                                 <Font name="Impact" size="12.0" />
+                              </font>
+                           </Button>
+                           <Button layoutX="52.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Enter full-screen view" textFill="#427a96">
+                              <font>
+                                 <Font name="Impact" size="11.0" />
+                              </font>
+                              <effect>
+                                 <Reflection bottomOpacity="0.02" />
+                              </effect>
+                           </Button>
+                           <Button layoutX="680.0" layoutY="20.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="ADD  task" textFill="#1780ea">
+                              <font>
+                                 <Font name="Impact" size="13.0" />
+                              </font>
+                              <effect>
+                                 <DropShadow blurType="ONE_PASS_BOX" height="9.3" radius="5.32" width="13.98" />
+                              </effect>
+                           </Button>
+                           <Button fx:id="completeButton1" focusTraversable="false" layoutX="681.0" layoutY="109.0" mnemonicParsing="false" onAction="#markAsComplete" prefHeight="18.0" prefWidth="138.0" text="Delete" textFill="#000000c8">
+                              <font>
+                                 <Font name="Impact" size="12.0" />
+                              </font>
+                           </Button>
+                           <DatePicker fx:id="datePicker" focusTraversable="false" layoutX="498.0" layoutY="20.0" prefHeight="25.0" prefWidth="138.0" />
+                        </children>
+                     </Pane>
+                  </top>
+                  <center>
+                     <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <children>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="459.0" prefWidth="520.0" style="-fx-background-radius: 0 10 10 10;">
+                              <children>
+                                 <Label layoutX="225.0" layoutY="4.0" text="To-Do">
+                                    <font>
+                                       <Font name="Georgia Bold Italic" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="taskListDone" layoutX="15.0" layoutY="23.0" maxHeight="497.0" maxWidth="506.0" minHeight="297.0" minWidth="322.0" onMouseClicked="#doneListClicked" prefHeight="420.0" prefWidth="506.0" />
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="478.0" minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="506.0" style="-fx-background-radius: 0 10 10 10;">
+                              <children>
+                                 <ListView fx:id="taskList" editable="true" layoutX="66.0" layoutY="24.0" maxHeight="497.0" maxWidth="482.0" minHeight="297.0" minWidth="253.0" onMouseClicked="#listClicked" prefHeight="418.0" prefWidth="276.0" />
+                                 <Label layoutX="177.0" layoutY="4.0" text="Collected">
+                                    <font>
+                                       <Font name="Georgia Bold Italic" size="13.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </AnchorPane>
+                        </children>
+                     </Pane>
+                  </center>
+               </BorderPane>
+            </children></StackPane>
+      </AnchorPane>
+   </center>
+</BorderPane>

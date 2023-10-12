@@ -22,7 +22,7 @@
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="433.0" fitWidth="393.0" layoutX="-3.0" pickOnBounds="true">
+            <ImageView fitHeight="430.0" fitWidth="388.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true">
                <image>
                   <Image url="@../../images/signup.png" />
                </image>
@@ -129,7 +129,7 @@
                   <Font name="Segoe UI Black" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="57.0" layoutY="51.0" onMouseClicked="#switchToLogin" onMousePressed="#switchToLogin" prefHeight="17.0" prefWidth="171.0" text="Have an Account? Login" textFill="#ae9a91">
+            <Label layoutX="57.0" layoutY="54.0" onMouseClicked="#switchToLogin" onMousePressed="#switchToLogin" prefHeight="17.0" prefWidth="171.0" text="Have an Account? Login" textFill="#ae9a91" underline="true">
                <font>
                   <Font name="Segoe UI Black" size="12.0" />
                </font>

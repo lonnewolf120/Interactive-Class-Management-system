@@ -65,6 +65,25 @@ public class sceneController {
         stage.show();
     }
 
+    public void switchControls(MouseEvent e, String view) throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(view)));
+        scene = new Scene(root);
+        stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
+//        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+//        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+    }
+    public void switchControlsAction(ActionEvent e, String view) throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(view)));
+        scene = new Scene(root);
+        stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
+//        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+//        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+    }
+
     public void closeButton(ActionEvent e) throws IOException {
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.close();
