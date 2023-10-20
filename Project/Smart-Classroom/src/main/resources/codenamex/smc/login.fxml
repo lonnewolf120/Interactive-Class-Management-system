@@ -19,7 +19,7 @@
 <AnchorPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0" style="-fx-background-color: #333333; -fx-border-color: orange;" styleClass="root" stylesheets="@css-files/custom.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
    <Pane layoutX="1.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0">
       <children>
-         <ImageView fitHeight="430.0" fitWidth="386.0" layoutY="-28.0" pickOnBounds="true">
+         <ImageView fitHeight="430.0" fitWidth="386.0" layoutX="1.0" layoutY="-28.0" pickOnBounds="true">
             <image>
                <Image url="@../../images/login.png" />
             </image>
@@ -39,12 +39,12 @@
             <Font name="Segoe UI Black" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="44.0" layoutY="83.0" text="Username" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <Label layoutX="44.0" layoutY="82.0" text="Username" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
             <Font name="Segoe UI Semibold Italic" size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="40.0" layoutY="104.0" prefHeight="30.0" prefWidth="279.0" />
+      <TextField id="username" fx:id="username" layoutX="40.0" layoutY="103.0" prefHeight="30.0" prefWidth="279.0" promptText="Username" />
       <Label layoutX="43.0" layoutY="150.0" text="Password" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
             <Font name="Segoe UI Semibold Italic" size="13.0" />
@@ -60,7 +60,7 @@
             <Font name="Segoe UI Black Italic" size="12.0" />
          </font>
       </Label>
-      <Button layoutX="124.0" layoutY="326.0" prefHeight="34.0" prefWidth="88.0" text="Submit" wrapText="true">
+      <Button fx:id="submitButton" layoutX="124.0" layoutY="326.0" onAction="#loginSubmitButton" prefHeight="34.0" prefWidth="88.0" text="Submit" wrapText="true">
          <font>
             <Font name="Segoe UI Semibold" size="12.0" />
          </font>
@@ -122,12 +122,22 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <PasswordField layoutX="40.0" layoutY="170.0" minHeight="32.0" prefHeight="30.0" prefWidth="279.0" />
+      <PasswordField id="password" fx:id="password" layoutX="40.0" layoutY="170.0" minHeight="32.0" prefHeight="30.0" prefWidth="279.0" promptText="Password" />
       <Label id="afterLoginText" fx:id="afterLoginText" layoutX="39.0" layoutY="283.0" prefHeight="20.0" prefWidth="279.0" textFill="WHITE">
          <font>
             <Font name="Segoe Script" size="12.0" />
          </font>
       </Label>
+      <ImageView fx:id="userEmpty" fitHeight="34.0" fitWidth="29.0" layoutX="286.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../images/Logos/Brake%20Warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="passEmpty" fitHeight="34.0" fitWidth="29.0" layoutX="286.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../images/Logos/Brake%20Warning.png" />
+         </image>
+      </ImageView>
    </Pane>
    <Button layoutX="653.0" layoutY="2.0" onAction="#closeButton" prefHeight="42.0" prefWidth="81.0" style="-fx-background-color: #333333;" text="Exit" textFill="#fafafa" wrapText="true">
       <font>

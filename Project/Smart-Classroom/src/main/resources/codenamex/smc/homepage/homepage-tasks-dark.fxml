@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<?import com.jfoenix.controls.Button?>-->
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -20,15 +19,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="window" prefHeight="664.0" prefWidth="1000.0"
-            xmlns="http://javafx.com/javafx/20.0.1" fx:controller="codenamex.smc.sceneController">
+<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
    <left>
-      <Pane prefHeight="622.0" prefWidth="162.0" style="-fx-background-color: E9E9E9;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="622.0" prefWidth="162.0" style="-fx-background-color: #666666;" BorderPane.alignment="CENTER">
          <children>
             <VBox layoutX="9.0" layoutY="52.0" prefHeight="408.0" prefWidth="148.0" spacing="15.0">
                <children>
-                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0"
-                          style="-fx-background-color: #666666;" text="TASKS">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #444444;" text="TASKS" textFill="#bcbcbc">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -40,7 +37,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT"   prefHeight="25.0" prefWidth="173.0" text="NOTES">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #999999;" text="NOTES">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -52,7 +49,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT"   prefHeight="46.0" prefWidth="176.0" text="NOTICE">
+                  <Button alignment="TOP_LEFT" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #999999;" text="NOTICE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -64,7 +61,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT"   prefHeight="25.0" prefWidth="173.0" text="TUTORIALS">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #999999;" text="TUTORIALS">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -76,7 +73,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT"   prefHeight="25.0" prefWidth="173.0" text="EDITOR">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #999999;" text="EDITOR">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -88,7 +85,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT"   prefHeight="25.0" prefWidth="173.0" text="USER">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #999999;" text="USER">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -100,7 +97,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT"   prefHeight="25.0" prefWidth="173.0" text="TRASH">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #999999;" text="TRASH">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -120,8 +117,7 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <ListView layoutX="9.0" layoutY="481.0" prefHeight="25.0" prefWidth="145.0" style="-fx-background-color: E9E9E9;" />
-            <Button   layoutX="66.0" layoutY="544.0" prefHeight="52.0" prefWidth="59.0" style="-fx-background-color: #4DBCFF; -fx-background-radius: 10px;" text="+" textFill="WHITE">
+            <Button layoutX="50.0" layoutY="524.0" prefHeight="52.0" prefWidth="59.0" style="-fx-background-color: #111111; -fx-background-radius: 10px;" text="+" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -129,14 +125,31 @@
          </children></Pane>
    </left>
    <top>
-      <Pane prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: dodgerblue; -fx-alignment: center;" styleClass="Top-Pane" BorderPane.alignment="CENTER">
+      <Pane prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: #111111; -fx-alignment: center;" styleClass="Top-Pane" BorderPane.alignment="CENTER">
          <children>
-            <FlowPane hgap="5.0" layoutX="4.0" layoutY="5.0" prefHeight="17.0" prefWidth="67.0" />
+            <FlowPane hgap="5.0" layoutX="4.0" layoutY="5.0" prefHeight="17.0" prefWidth="67.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Switch">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+               </children></FlowPane>
             <Label contentDisplay="CENTER" layoutX="454.0" layoutY="-3.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE">
                <font>
                   <Font name="Impact" size="23.0" />
                </font>
             </Label>
+            <Button layoutX="919.0" layoutY="-2.0" onAction="#closeButton" prefHeight="42.0" prefWidth="81.0" style="-fx-background-color: #333333;" text="Exit" textFill="#fafafa" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Black" size="10.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="925.0" layoutY="8.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/Logos/Close.png" />
+               </image>
+            </ImageView>
          </children></Pane>
    </top>
    <center>
@@ -145,15 +158,15 @@
             <children>
                <BorderPane prefHeight="200.0" prefWidth="200.0">
                   <top>
-                     <Pane prefHeight="163.0" prefWidth="838.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+                     <Pane prefHeight="163.0" prefWidth="838.0" style="-fx-background-color: #444444;" BorderPane.alignment="CENTER">
                         <children>
-                           <TextField fx:id="descriptionText" focusTraversable="false" layoutX="15.0" layoutY="20.0" prefHeight="66.0" prefWidth="463.0" promptText="Write the description of your new to-do task here ..." />
-                           <CheckBox fx:id="noDueDateCheckbox" focusTraversable="false" layoutX="500.0" layoutY="63.0" mnemonicParsing="false"  text="Task with no due date">
+                           <TextField fx:id="descriptionText" focusTraversable="false" layoutX="15.0" layoutY="20.0" prefHeight="66.0" prefWidth="463.0" promptText="Write the description of your new to-do task here ..." style="-fx-background-color: #888888;" />
+                           <CheckBox fx:id="noDueDateCheckbox" focusTraversable="false" layoutX="500.0" layoutY="63.0" mnemonicParsing="false" text="Task with no due date">
                               <font>
                                  <Font name="Gadugi Bold" size="12.0" />
                               </font>
                            </CheckBox>
-                           <CheckBox fx:id="urgentCheckbox" focusTraversable="false" layoutX="500.0" layoutY="95.0" mnemonicParsing="false"  text="Mark as urgent" />
+                           <CheckBox fx:id="urgentCheckbox" focusTraversable="false" layoutX="500.0" layoutY="95.0" mnemonicParsing="false" text="Mark as urgent" />
                            <Button fx:id="completeButton" focusTraversable="false" layoutX="680.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="138.0" text="Mark as complete" textFill="#000000c5">
                               <font>
                                  <Font name="Impact" size="12.0" />
@@ -189,18 +202,18 @@
                         <children>
                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="459.0" prefWidth="520.0" style="-fx-background-radius: 0 10 10 10;">
                               <children>
-                                 <Label layoutX="225.0" layoutY="4.0" text="To-Do">
+                                 <Label layoutX="225.0" layoutY="4.0" text="To-Do" textFill="#f4f4f4">
                                     <font>
                                        <Font name="Georgia Bold Italic" size="13.0" />
                                     </font>
                                  </Label>
-                                 <ListView fx:id="taskListDone" layoutX="15.0" layoutY="23.0" maxHeight="497.0" maxWidth="506.0" minHeight="297.0" minWidth="322.0" prefHeight="420.0" prefWidth="506.0" />
+                                 <ListView fx:id="taskListDone" layoutX="15.0" layoutY="23.0" maxHeight="497.0" maxWidth="506.0" minHeight="297.0" minWidth="322.0" prefHeight="420.0" prefWidth="506.0" style="-fx-background-color: #888888;" />
                               </children>
                            </AnchorPane>
                            <AnchorPane layoutX="478.0" minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="506.0" style="-fx-background-radius: 0 10 10 10;">
                               <children>
-                                 <ListView fx:id="taskList" editable="true" layoutX="66.0" layoutY="24.0" maxHeight="497.0" maxWidth="482.0" minHeight="297.0" minWidth="253.0" prefHeight="418.0" prefWidth="276.0" />
-                                 <Label layoutX="177.0" layoutY="4.0" text="Collected">
+                                 <ListView fx:id="taskList" editable="true" layoutX="66.0" layoutY="24.0" maxHeight="497.0" maxWidth="482.0" minHeight="297.0" minWidth="253.0" prefHeight="418.0" prefWidth="276.0" style="-fx-background-color: #888888;" />
+                                 <Label layoutX="177.0" layoutY="4.0" text="Collected" textFill="WHITE">
                                     <font>
                                        <Font name="Georgia Bold Italic" size="13.0" />
                                     </font>

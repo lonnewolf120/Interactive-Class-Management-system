@@ -3,6 +3,7 @@ module codenamex.smc {
     requires javafx.fxml;
     requires com.dlsc.formsfx;
     requires java.sql;
+    requires mysql.connector.j;
 //    requires MaterialFX;
 
     opens codenamex.smc to javafx.fxml;
