@@ -19,16 +19,35 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class sceneController {
-    private Parent root;
-    private Stage stage;
+    private static Parent root;
+    private static Stage stage;
     private Scene scene;
-
+    double x=0.0,y=0.0;//for Stage's getX, getY
+    public void MoveAbleWindow()
+    {
+        x=(stage.getX());
+        y=(stage.getY());
+        root.setOnMousePressed(event -> {
+            x=(event.getSceneX());
+            y=(event.getSceneY());
+        });
+        root.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - x);
+            stage.setY(event.getScreenY() - y);
+            stage.setOpacity(.7);
+        });
+        root.setOnMouseReleased((MouseEvent e)->{
+            stage.setOpacity(1);
+        });
+    }
     public void switchControls(MouseEvent e, String view) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(view)));
-        scene = new Scene(root);
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
+        MoveAbleWindow();   //Moveable window option
+        scene = new Scene(root);
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
 //        stage.initStyle(StageStyle.UNDECORATED);
@@ -36,8 +55,9 @@ public class sceneController {
     }
     public void switchControlsAction(String view, ActionEvent e) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(view)));
-        scene = new Scene(root);
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        MoveAbleWindow();   //Moveable window option
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
 //        stage.initStyle(StageStyle.UNDECORATED);
@@ -98,6 +118,7 @@ public class sceneController {
         }
         catch (Exception exc){exc.printStackTrace();}
     }
+
     public void loginSubmitButton(ActionEvent e) throws IOException{
         userEmpty.setVisible(username.getText().isBlank());
         passEmpty.setVisible(password.getText().isBlank());
