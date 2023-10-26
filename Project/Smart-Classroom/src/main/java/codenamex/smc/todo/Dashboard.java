@@ -1,5 +1,6 @@
 package codenamex.smc.todo;
 
+import codenamex.smc.HelloApplication;
 import codenamex.smc.todo.Data.OtherData;
 import codenamex.smc.todo.Data.TodoData;
 import javafx.event.ActionEvent;
@@ -71,9 +72,9 @@ public class Dashboard implements Initializable {
 
 
         try {
-            Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Today.fxml")));
+            FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Today.fxml"));
             contentArea.getChildren().removeAll();
-            contentArea.getChildren().setAll(fxml);
+            contentArea.getChildren().add(fxml.load());
 
         } catch (IOException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -82,17 +83,17 @@ public class Dashboard implements Initializable {
 
     @FXML
     private void Inbox(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Inbox.fxml")));
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Today.fxml"));
         contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        contentArea.getChildren().add(fxml.load());
 
     }
 
     @FXML
     private void Today(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Today.fxml")));
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Today.fxml"));
         contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        contentArea.getChildren().add(fxml.load());
         try{
 
             TodoData.getInstance().storeTodoItems();
@@ -105,9 +106,9 @@ public class Dashboard implements Initializable {
 
     @FXML
     private void Upcomming(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Upcomming.fxml")));
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Upcomming.fxml"));
         contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        contentArea.getChildren().add(fxml.load());
         try{
             TodoData.getInstance().storeTodoItems();
             OtherData.getInstance().storeOtherItems();
@@ -118,9 +119,9 @@ public class Dashboard implements Initializable {
 
     @FXML
     private void Important(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Important.fxml")));
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Important.fxml"));
         contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        contentArea.getChildren().add(fxml.load());
         try{
             TodoData.getInstance().storeTodoItems();
             OtherData.getInstance().storeOtherItems();
@@ -131,9 +132,9 @@ public class Dashboard implements Initializable {
 
     @FXML
     private void Someday(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Someday.fxml")));
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Someday.fxml"));
         contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        contentArea.getChildren().add(fxml.load());
         try{
             TodoData.getInstance().storeTodoItems();
             OtherData.getInstance().storeOtherItems();
@@ -145,9 +146,9 @@ public class Dashboard implements Initializable {
 
     @FXML
     private void Trash(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Trash.fxml")));
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("Trash.fxml"));
         contentArea.getChildren().removeAll();
-        contentArea.getChildren().setAll(fxml);
+        contentArea.getChildren().add(fxml.load());
         try{
 
             TodoData.getInstance().storeTodoItems();
@@ -164,7 +165,7 @@ public class Dashboard implements Initializable {
     }
     double x,y = 0;
     public void Addnewpage()throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Addnew.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Addnew.fxml")));
         Stage stage = new Stage();
 
         stage.initStyle(StageStyle.UNDECORATED);

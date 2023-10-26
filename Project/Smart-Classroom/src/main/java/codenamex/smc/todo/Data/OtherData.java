@@ -64,10 +64,7 @@ public class OtherData {
                     LocalDate date = LocalDate.parse(dateString, formatter);
                     OtherItem OtherItem = new OtherItem(shortDescription, details, category, date);
                     OtherItems.add(OtherItem);
-
-
                 }
-
 
             } finally {
                 if (br != null) {
