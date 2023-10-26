@@ -7,6 +7,7 @@ module codenamex.smc {
 //    requires MaterialFX;
 
     opens codenamex.smc to javafx.fxml;
+    opens codenamex.smc.todo to javafx.fxml;
     exports codenamex.smc;
     exports codenamex.smc.todo;
 }

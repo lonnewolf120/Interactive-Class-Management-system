@@ -84,7 +84,7 @@ public class Controller implements Initializable {
 
     public void Dash()throws Exception{
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View/Dashboard.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Dashboard.fxml")));
 
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
