@@ -3,13 +3,15 @@
 <!--<?import com.jfoenix.controls.Button?>-->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,11 +22,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.dashboard">
+<BorderPane fx:id="window" prefHeight="783.0" prefWidth="1227.0" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.dashboard">
    <left>
-      <Pane prefHeight="622.0" prefWidth="162.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="9.0" layoutY="52.0" prefHeight="408.0" prefWidth="148.0" spacing="15.0">
+            <VBox layoutX="22.0" layoutY="52.0" prefHeight="412.0" prefWidth="148.0" spacing="15.0">
                <children>
                   <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #666666;" text="TASKS">
                      <font>
@@ -125,15 +127,129 @@
             </Button>
          </children></Pane>
    </left>
+   <center>
+      <AnchorPane>
+         <StackPane fx:id="contentArea" layoutX="-42.0" prefHeight="622.0" prefWidth="835.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <BorderPane prefHeight="200.0" prefWidth="200.0">
+                  <top>
+                     <Pane prefHeight="181.0" prefWidth="1041.0">
+                        <children>
+                           <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="212.0" prefWidth="535.0">
+                              <children>
+                                 <TextField layoutX="11.0" layoutY="28.0" prefHeight="34.0" prefWidth="507.0" promptText="Headline of the task" style="-fx-border-color: #006AA1;" AnchorPane.bottomAnchor="145.6" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.599999999999966" AnchorPane.topAnchor="28.0" />
+                                 <Label layoutX="32.0" layoutY="1.0" prefHeight="22.0" prefWidth="173.0" text="Task Title" AnchorPane.bottomAnchor="184.6" AnchorPane.leftAnchor="32.00000000000003" AnchorPane.rightAnchor="323.19999999999993" AnchorPane.topAnchor="1.0">
+                                    <font>
+                                       <Font name="Consolas Bold" size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label layoutX="27.0" layoutY="71.0" prefHeight="21.0" prefWidth="182.0" text="Task Description" AnchorPane.bottomAnchor="115.4" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="319.4" AnchorPane.topAnchor="71.0">
+                                    <font>
+                                       <Font name="Consolas Bold" size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="descriptionText" focusTraversable="false" layoutX="11.0" layoutY="98.0" prefHeight="80.0" prefWidth="513.0" promptText="Write the description of your new to-do task here ..." style="-fx-border-color: #006AA1;" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="98.0" />
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="698.0" layoutY="-5.0" prefHeight="212.0" prefWidth="169.0">
+                              <children>
+                                 <CheckBox fx:id="noDueDateCheckbox" focusTraversable="false" layoutX="18.0" layoutY="28.0" mnemonicParsing="false" text="Task with no due date" AnchorPane.bottomAnchor="166.4" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="5.684341886080802E-14" AnchorPane.topAnchor="28.0">
+                                    <font>
+                                       <Font name="Gadugi Bold" size="12.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <Button fx:id="completeButton" focusTraversable="false" layoutX="19.0" layoutY="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="138.0" text="Mark as complete" textFill="#ffffffc4" AnchorPane.bottomAnchor="109.8" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="7.80000000000004" AnchorPane.topAnchor="75.0">
+                                    <font>
+                                       <Font name="Impact" size="12.0" />
+                                    </font>
+                                 </Button>
+                                 <Button layoutX="19.0" layoutY="125.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Enter full-screen view" textFill="#81acc1" AnchorPane.bottomAnchor="59.80000000000001" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="7.80000000000004" AnchorPane.topAnchor="125.0">
+                                    <font>
+                                       <Font name="Impact" size="11.0" />
+                                    </font>
+                                    <effect>
+                                       <Reflection bottomOpacity="0.02" />
+                                    </effect>
+                                 </Button>
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="547.0" layoutY="6.0" prefHeight="212.0" prefWidth="149.0">
+                              <children>
+                                 <DatePicker fx:id="datePicker" focusTraversable="false" layoutX="15.0" layoutY="26.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="118.0" AnchorPane.bottomAnchor="160.4" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.80000000000004" AnchorPane.topAnchor="26.0" />
+                                 <CheckBox fx:id="urgentCheckbox" focusTraversable="false" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="110.0" text="Mark as urgent" AnchorPane.bottomAnchor="118.4" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="20.80000000000004" AnchorPane.topAnchor="76.0" />
+                                 <MenuButton layoutX="29.0" layoutY="122.0" mnemonicParsing="false" text="Priority" AnchorPane.bottomAnchor="64.4" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="48.80000000000004" AnchorPane.topAnchor="122.0">
+                                   <items>
+                                     <MenuItem mnemonicParsing="false" text="Action 1" />
+                                     <MenuItem mnemonicParsing="false" text="Action 2" />
+                                   </items>
+                                 </MenuButton>
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="869.0" layoutY="5.0" prefHeight="200.0" prefWidth="164.0">
+                              <children>
+                                 <Button layoutX="15.0" layoutY="46.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="ADD  task" textFill="#88c1f7" AnchorPane.bottomAnchor="127.6" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.599999999999994" AnchorPane.topAnchor="46.0">
+                                    <font>
+                                       <Font name="Impact" size="13.0" />
+                                    </font>
+                                    <effect>
+                                       <Reflection />
+                                    </effect>
+                                 </Button>
+                                 <Button fx:id="completeButton1" focusTraversable="false" layoutX="15.0" layoutY="117.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Clear" textFill="#ffffffc7" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="117.0">
+                                    <font>
+                                       <Font name="Impact" size="12.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </AnchorPane>
+                        </children>
+                     </Pane>
+                  </top>
+                  <center>
+                     <AnchorPane prefHeight="538.0" prefWidth="1041.0" BorderPane.alignment="CENTER">
+                        <children>
+                           <BorderPane prefHeight="552.0" prefWidth="1041.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <center>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="555.0" style="-fx-background-radius: 0 10 10 10;" BorderPane.alignment="CENTER">
+                                    <children>
+                                       <Label layoutX="284.0" layoutY="-6.0" prefHeight="0.0" prefWidth="100.0" text="To-Do" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="233.0" AnchorPane.topAnchor="-6.0">
+                                          <font>
+                                             <Font name="Georgia Bold Italic" size="20.0" />
+                                          </font>
+                                       </Label>
+                                       <ListView fx:id="taskListDone" layoutX="16.0" layoutY="36.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="485.0" prefWidth="538.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0" />
+                                    </children>
+                                 </AnchorPane>
+                              </center>
+                              <right>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="424.0" style="-fx-background-radius: 0 10 10 10;" BorderPane.alignment="CENTER">
+                                    <children>
+                                       <Label layoutX="149.0" layoutY="8.0" prefHeight="26.0" prefWidth="123.0" text="Completed" AnchorPane.bottomAnchor="501.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="8.0">
+                                          <font>
+                                             <Font name="Georgia Bold Italic" size="20.0" />
+                                          </font>
+                                       </Label>
+                                       <ListView fx:id="taskList" editable="true" layoutX="16.0" layoutY="35.0" maxHeight="504.0" maxWidth="482.0" minHeight="297.0" minWidth="253.0" prefHeight="504.0" prefWidth="398.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0" />
+                                    </children>
+                                 </AnchorPane>
+                              </right>
+                           </BorderPane>
+                        </children>
+                     </AnchorPane>
+                  </center>
+               </BorderPane>
+            </children></StackPane>
+      </AnchorPane>
+   </center>
    <top>
-      <Pane fx:id="topbar" prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="topbar" prefHeight="53.0" prefWidth="1232.0" styleClass="pane" BorderPane.alignment="CENTER">
          <children>
-            <Label contentDisplay="CENTER" layoutX="454.0" layoutY="-3.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE">
+            <Label contentDisplay="CENTER" layoutX="556.0" layoutY="2.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE" AnchorPane.bottomAnchor="8.399999999999999" AnchorPane.leftAnchor="556.0" AnchorPane.rightAnchor="484.8" AnchorPane.topAnchor="2.0">
                <font>
                   <Font name="Impact" size="23.0" />
                </font>
             </Label>
-            <Button layoutX="927.0" onAction="#closeButton" prefHeight="15.0" prefWidth="72.0" text="Exit" textFill="#fafafa" wrapText="true">
+            <Button layoutX="1148.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeButton" text="Exit" textFill="#fafafa" wrapText="true" AnchorPane.bottomAnchor="5.600000000000001" AnchorPane.leftAnchor="1148.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="4.0">
                <font>
                   <Font name="Segoe UI Black" size="10.0" />
                </font>
@@ -142,84 +258,13 @@
                      <image>
                         <Image url="@../../../images/Logos/Close.png" />
                      </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
                   </ImageView>
                </graphic>
             </Button>
-         </children></Pane>
-   </top>
-   <center>
-      <AnchorPane>
-         <StackPane fx:id="contentArea" layoutX="-42.0" prefHeight="622.0" prefWidth="835.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-               <BorderPane prefHeight="200.0" prefWidth="200.0">
-                  <top>
-                     <Pane prefHeight="163.0" prefWidth="838.0" BorderPane.alignment="CENTER">
-                        <children>
-                           <TextField fx:id="descriptionText" focusTraversable="false" layoutX="15.0" layoutY="20.0" prefHeight="66.0" prefWidth="463.0" promptText="Write the description of your new to-do task here ..." />
-                           <CheckBox fx:id="noDueDateCheckbox" focusTraversable="false" layoutX="500.0" layoutY="63.0" mnemonicParsing="false" text="Task with no due date">
-                              <font>
-                                 <Font name="Gadugi Bold" size="12.0" />
-                              </font>
-                           </CheckBox>
-                           <CheckBox fx:id="urgentCheckbox" focusTraversable="false" layoutX="500.0" layoutY="95.0" mnemonicParsing="false" text="Mark as urgent" />
-                           <Button fx:id="completeButton" focusTraversable="false" layoutX="680.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="138.0" text="Mark as complete" textFill="#000000c5">
-                              <font>
-                                 <Font name="Impact" size="12.0" />
-                              </font>
-                           </Button>
-                           <Button layoutX="52.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Enter full-screen view" textFill="#427a96">
-                              <font>
-                                 <Font name="Impact" size="11.0" />
-                              </font>
-                              <effect>
-                                 <Reflection bottomOpacity="0.02" />
-                              </effect>
-                           </Button>
-                           <Button layoutX="680.0" layoutY="20.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="ADD  task" textFill="#1780ea">
-                              <font>
-                                 <Font name="Impact" size="13.0" />
-                              </font>
-                              <effect>
-                                 <DropShadow blurType="ONE_PASS_BOX" height="9.3" radius="5.32" width="13.98" />
-                              </effect>
-                           </Button>
-                           <Button fx:id="completeButton1" focusTraversable="false" layoutX="681.0" layoutY="109.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="138.0" text="Delete" textFill="#000000c8">
-                              <font>
-                                 <Font name="Impact" size="12.0" />
-                              </font>
-                           </Button>
-                           <DatePicker fx:id="datePicker" focusTraversable="false" layoutX="498.0" layoutY="20.0" prefHeight="25.0" prefWidth="138.0" />
-                        </children>
-                     </Pane>
-                  </top>
-                  <center>
-                     <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                        <children>
-                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="459.0" prefWidth="520.0" style="-fx-background-radius: 0 10 10 10;">
-                              <children>
-                                 <Label layoutX="225.0" layoutY="4.0" text="To-Do">
-                                    <font>
-                                       <Font name="Georgia Bold Italic" size="13.0" />
-                                    </font>
-                                 </Label>
-                                 <ListView fx:id="taskListDone" layoutX="15.0" layoutY="23.0" maxHeight="497.0" maxWidth="506.0" minHeight="297.0" minWidth="322.0" prefHeight="420.0" prefWidth="506.0" />
-                              </children>
-                           </AnchorPane>
-                           <AnchorPane layoutX="478.0" minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="506.0" style="-fx-background-radius: 0 10 10 10;">
-                              <children>
-                                 <ListView fx:id="taskList" editable="true" layoutX="66.0" layoutY="24.0" maxHeight="497.0" maxWidth="482.0" minHeight="297.0" minWidth="253.0" prefHeight="418.0" prefWidth="276.0" />
-                                 <Label layoutX="177.0" layoutY="4.0" text="Collected">
-                                    <font>
-                                       <Font name="Georgia Bold Italic" size="13.0" />
-                                    </font>
-                                 </Label>
-                              </children>
-                           </AnchorPane>
-                        </children>
-                     </Pane>
-                  </center>
-               </BorderPane>
-            </children></StackPane>
+         </children>
       </AnchorPane>
-   </center>
+   </top>
 </BorderPane>

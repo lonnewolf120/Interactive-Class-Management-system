@@ -1,14 +1,14 @@
 
 .root {
-    -fx-accent: #1e74c6;
+    -fx-accent: #0066AA;
     -fx-focus-color: -fx-accent;
     -fx-base: #373e43;
     -fx-control-inner-background: derive(-fx-base, 35%);
     -fx-control-inner-background-alt: -fx-control-inner-background ;
 }
 .pane{
-    -fx-base: #000908;
-    -fx-background-color: #000908;
+    -fx-base: #323232;
+    -fx-background-color: #323232;
 }
 .toppane{
     -fx-base: #000908;
