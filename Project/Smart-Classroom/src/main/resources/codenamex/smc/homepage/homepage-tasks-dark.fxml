@@ -13,13 +13,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
+<BorderPane fx:id="window" prefHeight="664.0" prefWidth="1000.0" style="-fx-background-color: #333333;" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
    <left>
       <Pane prefHeight="622.0" prefWidth="162.0" style="-fx-background-color: #666666;" BorderPane.alignment="CENTER">
          <children>
@@ -125,16 +124,17 @@
          </children></Pane>
    </left>
    <top>
-      <Pane prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: #111111; -fx-alignment: center;" styleClass="Top-Pane" BorderPane.alignment="CENTER">
+      <Pane prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: #111111; -fx-alignment: center;" styleClass="pane" BorderPane.alignment="CENTER">
          <children>
-            <FlowPane hgap="5.0" layoutX="4.0" layoutY="5.0" prefHeight="17.0" prefWidth="67.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Switch">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                  </Button>
-               </children></FlowPane>
+            <Button fx:id="theme_switch" layoutX="6.0" layoutY="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Switch">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Logos/theme3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Label contentDisplay="CENTER" layoutX="454.0" layoutY="-3.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE">
                <font>
                   <Font name="Impact" size="23.0" />
@@ -144,12 +144,14 @@
                <font>
                   <Font name="Segoe UI Black" size="10.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="37.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Logos/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="925.0" layoutY="8.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/Logos/Close.png" />
-               </image>
-            </ImageView>
          </children></Pane>
    </top>
    <center>

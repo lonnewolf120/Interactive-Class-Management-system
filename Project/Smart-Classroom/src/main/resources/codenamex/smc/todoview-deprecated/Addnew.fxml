@@ -26,7 +26,7 @@
             <FlowPane hgap="5.0" layoutX="573.0" layoutY="7.0" prefHeight="17.0" prefWidth="17.0">
                <children>
                   <ImageView fx:id="Exit" fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@View/img/Exit.png"/>
+                     <Image url="@../../../images/img/Exit.png"/>
                   </ImageView>
                </children>
             </FlowPane>
