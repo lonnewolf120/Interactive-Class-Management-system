@@ -1,6 +1,9 @@
 package codenamex.smc;
 
+//import codenamex.smc.Login;
+//import codenamex.smc.RegisterUser;
 //import io.github.palexdev.materialfx.controls.*;
+import codenamex.smc.Database.DatabaseManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +20,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class sceneController {
     private static Parent root;
@@ -43,7 +45,7 @@ public class sceneController {
         });
     }
     public void switchControls(MouseEvent e, String view) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(view)));
+        root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
         MoveAbleWindow();   //Moveable window option
         scene = new Scene(root);
@@ -52,7 +54,7 @@ public class sceneController {
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
-    public static void switchControlsAction(String view, ActionEvent e) throws IOException{
+    public void switchControlsAction(String view, ActionEvent e) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -82,6 +84,9 @@ public class sceneController {
         stage.close();
     }
 
+
+    ///TODO--------LOGIN SEGMENT (make separate java file)--------
+
     @FXML
     private Label passwordChangeTextfield;
     @FXML
@@ -105,24 +110,28 @@ public class sceneController {
 //            assert connect != null;
             PreparedStatement prepare = connect.prepareStatement(sql_command);
 
-            prepare.setString(1,username.getText());
-            prepare.setString(2,password.getText());
+            prepare.setString(2,username.getText());
+            prepare.setString(3,password.getText());
+            prepare.setString(3,password.getText());
 
             ResultSet result = prepare.executeQuery();
 
-            if(result.next())
-                switchControlsAction("homepage/homepage-tasks-dark.fxml",e);
+            if(result.next()) {
+//                sceneController.switchControlsAction("homepage/homepage-tasks-dark.fxml",e);
+                switchControlsAction("homepage/homepage-tasks.fxml", e);
 //                  switchControlsAction("Dashboard.fxml",e);
+
+            }
             else
                 afterLoginText.setText("Login Credentials doesn't match. Try again😅");
         }
         catch (Exception exc){exc.printStackTrace();}
     }
 
-    public void loginSubmitButton(ActionEvent e) throws IOException{
-        userEmpty.setVisible(username.getText().isBlank());
-        passEmpty.setVisible(password.getText().isBlank());
-        if(username.getText().isBlank() || password.getText().isBlank())
+    public void loginSubmitButton(ActionEvent e) throws IOException {
+        userEmpty.setVisible(username.getText().isEmpty());
+        passEmpty.setVisible(password.getText().isEmpty());
+        if(username.getText().isEmpty() || password.getText().isEmpty())
         {
             afterLoginText.setStyle("-fx-text-fill: red;");
             afterLoginText.setText("Please enter your credentials");
@@ -133,12 +142,17 @@ public class sceneController {
 //        TextField passwordChangeTextfield = new TextField();
         passwordChangeTextfield.setText("Check your mail, after confirmation the password will be changed");
     }
+
+
+
+    ////TODO-----REGISTER USER (make separate Java file)/--------
+
+
     @FXML
     private PasswordField confirm_pass;
 
     @FXML
     private DatePicker date_of_birth;
-
     @FXML
     private MenuButton institute;
 
@@ -163,16 +177,14 @@ public class sceneController {
     @FXML
     private TextField register_username;
 
-    public void registerAdmin(ActionEvent e)
-    {
+    public void registerAdmin(ActionEvent e) {
 //        String sql_command ="SELECT count(1) FROM login_info WHERE username = ? AND password = ?;";
         Connection connect = DatabaseManager.connectDB();
-        String username=register_username.getText(), email=register_email.getText(), pass=new_pass.getText();
+        String username = register_username.getText(), email = register_email.getText(), pass = new_pass.getText();
         String insertFields = "INSERT INTO `userdata`.`login_info` (`username`, `password`,`email`) VALUES ('";
-        String insertValues = username+"','"+pass+"','"+email+"');";
-        String insertToRegister = insertFields+insertValues;
-        try
-        {
+        String insertValues = username + "','" + pass + "','" + email + "');";
+        String insertToRegister = insertFields + insertValues;
+        try {
 //            assert connect != null;
 //            PreparedStatement prepare = connect.prepareStatement(sql_command);
 //
@@ -183,45 +195,47 @@ public class sceneController {
 //            ResultSet result = prepare.executeQuery();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Registration Completed");
-            alert.setHeaderText("Registered Mr."+username+"'s account");
+            alert.setHeaderText("Registered Mr." + username + "'s account");
             alert.setContentText("Congratulations, your ID has been registered.\nNow login with the credentials");
             alert.showAndWait();
 //            iinText.setText("Login Credentials doesn't match. Try again😅");
+        } catch (Exception exc) {
+            exc.printStackTrace();
         }
-        catch (Exception exc){exc.printStackTrace();}
     }
 
     public void register_submit_button(ActionEvent e) throws IOException {
 //        doesnt_match_text.setVisible(new_pass.getText().equals(confirm_pass.getText()));
-//        register_username.setVisible(register_username.getText().isBlank());
-//        new_pass.setVisible(new_pass.getText().isBlank());
+//        register_username.setVisible(register_username.getText().isEmpty());
+//        new_pass.setVisible(new_pass.getText().isEmpty());
         userblank.setVisible(register_username.getText().isEmpty());
         passblank1.setVisible(register_email.getText().isEmpty());
         passblank.setVisible(new_pass.getText().isEmpty());
         passblank2.setVisible(confirm_pass.getText().isEmpty());
-        if(register_username.getText().isBlank() || new_pass.getText().isBlank() || confirm_pass.getText().isBlank() || register_email.getText().isBlank())
-        {
+        if (register_username.getText().isEmpty() || new_pass.getText().isEmpty() || confirm_pass.getText().isEmpty() || register_email.getText().isEmpty()) {
 //            afterLoginText.setStyle("-fx-text-fill: red;");
 //            afterLoginText.setText("Please enter your credentials");
-        }
-        else
-        {
-            if(new_pass.getText().equals(confirm_pass.getText()))
-            {
+        } else {
+            if (new_pass.getText().equals(confirm_pass.getText())) {
                 doesnt_match_text.getStyleClass().add("green");
                 doesnt_match_text.setText("Matched!");
                 registerAdmin(e);
+//                sceneController.switchToLoginA(e);
                 switchToLoginA(e);
-            }
-            else
-            {
+            } else {
 
                 doesnt_match_text.getStyleClass().add("red");
                 doesnt_match_text.setText("doesn't match!");
             }
 
         }
+
     }
 
 
-}
+
+    }
+
+
+
+

@@ -28,7 +28,7 @@
                      </font>
                      <graphic>
                          <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                             <Image url="@View/img/Inbox.png"/>
+                             <Image url="@../../../images/img/Inbox.png"/>
                          </ImageView>
                      </graphic>
                   </Button>
@@ -38,7 +38,7 @@
                      </font>
                      <graphic>
                          <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                             <Image url="@View/img/Today.png"/>
+                             <Image url="@../../../images/img/Today.png"/>
                          </ImageView>
                      </graphic>
                   </Button>
@@ -48,7 +48,7 @@
                      </font>
                      <graphic>
                          <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                             <Image url="@View/img/upcomming.png"/>
+                             <Image url="@../../../images/img/upcomming.png"/>
                          </ImageView>
                      </graphic>
                   </Button>
@@ -58,7 +58,7 @@
                      </font>
                      <graphic>
                          <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                             <Image url="@View/img/important.png"/>
+                             <Image url="@../../../images/img/important.png"/>
                          </ImageView>
                      </graphic>
                   </Button>
@@ -69,7 +69,7 @@
                      <graphic>
                         <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@View/img/target.png" />
+                              <Image url="@../../../images/img/target.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -80,7 +80,7 @@
                      </font>
                      <graphic>
                          <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                             <Image url="@View/img/Trash.png"/>
+                             <Image url="@../../../images/img/Trash.png"/>
                          </ImageView>
                      </graphic>
                   </Button>
@@ -112,17 +112,17 @@
                <children>
                   <ImageView fx:id="Exit" fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@View/img/Exit.png" />
+                        <Image url="@../../../images/img/Exit.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="Minimize" fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@View/img/Minimize.png" />
+                        <Image url="@../../../images/img/Minimize.png" />
                      </image>
                   </ImageView>
                    <ImageView fx:id="Maximize" fitHeight="17.0" fitWidth="21.0" pickOnBounds="true"
                               preserveRatio="true">
-                       <Image url="@View/img/Maximize.png"/>
+                       <Image url="@../../../images/img/Maximize.png"/>
                    </ImageView>
                </children>
             </FlowPane>

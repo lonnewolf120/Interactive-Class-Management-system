@@ -130,12 +130,12 @@
       </Label>
       <ImageView fx:id="userEmpty" fitHeight="34.0" fitWidth="29.0" layoutX="286.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../../images/Logos/Brake%20Warning.png" />
+            <Image url="@../../images/Logos/Brake Warning.png" />
          </image>
       </ImageView>
       <ImageView fx:id="passEmpty" fitHeight="34.0" fitWidth="29.0" layoutX="286.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../../images/Logos/Brake%20Warning.png" />
+            <Image url="@../../images/Logos/Brake Warning.png" />
          </image>
       </ImageView>
    </Pane>
