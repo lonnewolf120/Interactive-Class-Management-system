@@ -44,7 +44,7 @@ public class sceneController {
             stage.setOpacity(1);
         });
     }
-    public void switchControls(MouseEvent e, String view) throws IOException{
+    public static void switchControls(MouseEvent e, String view) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
         MoveAbleWindow();   //Moveable window option
@@ -54,7 +54,7 @@ public class sceneController {
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
-    public void switchControlsAction(String view, ActionEvent e) throws IOException{
+    public static void switchControlsAction(String view, ActionEvent e) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -64,84 +64,28 @@ public class sceneController {
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
-    public void switchToSignup(MouseEvent e) throws IOException {
+    public static void switchToSignup(MouseEvent e) throws IOException {
         switchControls(e,"signup.fxml");
     }
-    public void switchToSignupA(ActionEvent e) throws IOException {
+    public static void switchToSignupA(ActionEvent e) throws IOException {
        switchControlsAction("signup.", e);
     }
-    public void switchToLoginA(ActionEvent e) throws IOException {
+    public static void switchToLoginA(ActionEvent e) throws IOException {
         switchControlsAction("login.fxml",e);
     }
-    public void switchToLogin(MouseEvent e) throws IOException {
+    public static void switchToLogin(MouseEvent e) throws IOException {
         switchControls(e,"login.fxml");
     }
-    public void switchToFP(MouseEvent e) throws IOException {
+    public static void switchToFP(MouseEvent e) throws IOException {
         switchControls(e,"forgot-password.fxml");
     }
-    public void closeButton(ActionEvent e){
+    public static void closeButton(ActionEvent e){
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.close();
     }
 
 
     ///TODO--------LOGIN SEGMENT (make separate java file)--------
-
-    @FXML
-    private Label passwordChangeTextfield;
-    @FXML
-    private Label afterLoginText;
-    @FXML
-    private TextField username;
-    @FXML
-    private PasswordField password;
-    @FXML
-    private ImageView userEmpty;
-    @FXML
-    private ImageView passEmpty;
-    @FXML
-    private Button submitButton;
-    public void loginAdmin(ActionEvent e)
-    {
-        String sql_command ="SELECT * FROM login_info WHERE username = ? AND password = ?;";
-        Connection connect = DatabaseManager.connectDB();
-        try
-        {
-//            assert connect != null;
-            PreparedStatement prepare = connect.prepareStatement(sql_command);
-
-            prepare.setString(2,username.getText());
-            prepare.setString(3,password.getText());
-            prepare.setString(3,password.getText());
-
-            ResultSet result = prepare.executeQuery();
-
-            if(result.next()) {
-//                sceneController.switchControlsAction("homepage/homepage-tasks-dark.fxml",e);
-                switchControlsAction("homepage/homepage-tasks.fxml", e);
-//                  switchControlsAction("Dashboard.fxml",e);
-
-            }
-            else
-                afterLoginText.setText("Login Credentials doesn't match. Try again😅");
-        }
-        catch (Exception exc){exc.printStackTrace();}
-    }
-
-    public void loginSubmitButton(ActionEvent e) throws IOException {
-        userEmpty.setVisible(username.getText().isEmpty());
-        passEmpty.setVisible(password.getText().isEmpty());
-        if(username.getText().isEmpty() || password.getText().isEmpty())
-        {
-            afterLoginText.setStyle("-fx-text-fill: red;");
-            afterLoginText.setText("Please enter your credentials");
-        }
-        else loginAdmin(e);
-    }
-    public void ForgotPasswordSubmit(ActionEvent e) throws IOException{
-//        TextField passwordChangeTextfield = new TextField();
-        passwordChangeTextfield.setText("Check your mail, after confirmation the password will be changed");
-    }
 
 
 
@@ -183,22 +127,18 @@ public class sceneController {
         String username = register_username.getText(), email = register_email.getText(), pass = new_pass.getText();
         String insertFields = "INSERT INTO `userdata`.`login_info` (`username`, `password`,`email`) VALUES ('";
         String insertValues = username + "','" + pass + "','" + email + "');";
-        String insertToRegister = insertFields + insertValues;
+        String insertToRegister = insertFields + insertValues;    //#SQL command
         try {
-//            assert connect != null;
-//            PreparedStatement prepare = connect.prepareStatement(sql_command);
-//
-//            prepare.setString(1,register_username.getText());
-//            prepare.setString(2,new_pass.getText());
             Statement statement = connect.createStatement();
             statement.executeUpdate(insertToRegister);
-//            ResultSet result = prepare.executeQuery();
+
+            //!Alert
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Registration Completed");
             alert.setHeaderText("Registered Mr." + username + "'s account");
             alert.setContentText("Congratulations, your ID has been registered.\nNow login with the credentials");
             alert.showAndWait();
-//            iinText.setText("Login Credentials doesn't match. Try again😅");
+            //!Alert
         } catch (Exception exc) {
             exc.printStackTrace();
         }
