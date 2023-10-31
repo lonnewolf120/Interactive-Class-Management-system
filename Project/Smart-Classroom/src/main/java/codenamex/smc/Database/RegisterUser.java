@@ -1,7 +1,4 @@
-/*package codenamex.smc;
-
-
-//import io.github.palexdev.materialfx.controls.*;
+package codenamex.smc.Database;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +11,7 @@ import codenamex.smc.sceneController;
 import javafx.scene.input.MouseEvent;
 
 public class RegisterUser {
+
 
     @FXML
     private PasswordField confirm_pass;
@@ -50,22 +48,18 @@ public class RegisterUser {
         String username = register_username.getText(), email = register_email.getText(), pass = new_pass.getText();
         String insertFields = "INSERT INTO `userdata`.`login_info` (`username`, `password`,`email`) VALUES ('";
         String insertValues = username + "','" + pass + "','" + email + "');";
-        String insertToRegister = insertFields + insertValues;
+        String insertToRegister = insertFields + insertValues;    //#SQL command
         try {
-//            assert connect != null;
-//            PreparedStatement prepare = connect.prepareStatement(sql_command);
-//
-//            prepare.setString(1,register_username.getText());
-//            prepare.setString(2,new_pass.getText());
             Statement statement = connect.createStatement();
             statement.executeUpdate(insertToRegister);
-//            ResultSet result = prepare.executeQuery();
+
+            //!Alert
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Registration Completed");
             alert.setHeaderText("Registered Mr." + username + "'s account");
             alert.setContentText("Congratulations, your ID has been registered.\nNow login with the credentials");
             alert.showAndWait();
-//            iinText.setText("Login Credentials doesn't match. Try again😅");
+            //!Alert
         } catch (Exception exc) {
             exc.printStackTrace();
         }
@@ -73,13 +67,13 @@ public class RegisterUser {
 
     public void register_submit_button(ActionEvent e) throws IOException {
 //        doesnt_match_text.setVisible(new_pass.getText().equals(confirm_pass.getText()));
-//        register_username.setVisible(register_username.getText().isBlank());
-//        new_pass.setVisible(new_pass.getText().isBlank());
+//        register_username.setVisible(register_username.getText().isEmpty());
+//        new_pass.setVisible(new_pass.getText().isEmpty());
         userblank.setVisible(register_username.getText().isEmpty());
         passblank1.setVisible(register_email.getText().isEmpty());
         passblank.setVisible(new_pass.getText().isEmpty());
         passblank2.setVisible(confirm_pass.getText().isEmpty());
-        if (register_username.getText().isBlank() || new_pass.getText().isBlank() || confirm_pass.getText().isBlank() || register_email.getText().isBlank()) {
+        if (register_username.getText().isEmpty() || new_pass.getText().isEmpty() || confirm_pass.getText().isEmpty() || register_email.getText().isEmpty()) {
 //            afterLoginText.setStyle("-fx-text-fill: red;");
 //            afterLoginText.setText("Please enter your credentials");
         } else {
@@ -87,6 +81,7 @@ public class RegisterUser {
                 doesnt_match_text.getStyleClass().add("green");
                 doesnt_match_text.setText("Matched!");
                 registerAdmin(e);
+//                sceneController.switchToLoginA(e);
                 sceneController.switchToLoginA(e);
             } else {
 
@@ -97,8 +92,12 @@ public class RegisterUser {
         }
 
     }
+
     public void switchToLogin(MouseEvent e) throws IOException {
         sceneController.switchToLogin(e);
     }
+
+    public void closeButton(ActionEvent e) {
+        sceneController.closeButton(e);
+    }
 }
-*/
