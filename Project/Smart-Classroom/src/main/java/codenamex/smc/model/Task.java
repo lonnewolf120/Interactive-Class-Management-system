@@ -1,5 +1,7 @@
 package codenamex.smc.model;
 
+import com.mysql.cj.conf.StringProperty;
+
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -18,6 +20,8 @@ public class Task {
         this.deadline = deadline;
         this.completed = completed;
     }
+
+
 
     public Integer getPriority() {
         return priority;
@@ -58,4 +62,6 @@ public class Task {
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
+
+
 }
