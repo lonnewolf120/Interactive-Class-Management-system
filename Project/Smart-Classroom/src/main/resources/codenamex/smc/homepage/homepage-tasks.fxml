@@ -11,6 +11,9 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
@@ -137,7 +140,7 @@
                         <children>
                            <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="212.0" prefWidth="535.0">
                               <children>
-                                 <TextField layoutX="11.0" layoutY="28.0" prefHeight="34.0" prefWidth="507.0" promptText="Headline of the task" style="-fx-border-color: #006AA1;" AnchorPane.bottomAnchor="145.6" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.599999999999966" AnchorPane.topAnchor="28.0" />
+                                 <TextField fx:id="taskTitile" layoutX="11.0" layoutY="28.0" prefHeight="34.0" prefWidth="507.0" promptText="Headline of the task" style="-fx-border-color: #006AA1;" AnchorPane.bottomAnchor="145.6" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.599999999999966" AnchorPane.topAnchor="28.0" />
                                  <Label layoutX="32.0" layoutY="1.0" prefHeight="22.0" prefWidth="173.0" text="Task Title" AnchorPane.bottomAnchor="184.6" AnchorPane.leftAnchor="32.00000000000003" AnchorPane.rightAnchor="323.19999999999993" AnchorPane.topAnchor="1.0">
                                     <font>
                                        <Font name="Consolas Bold" size="17.0" />
@@ -158,12 +161,12 @@
                                        <Font name="Gadugi Bold" size="12.0" />
                                     </font>
                                  </CheckBox>
-                                 <Button fx:id="completeButton" focusTraversable="false" layoutX="19.0" layoutY="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="138.0" text="Mark as complete" textFill="#ffffffc4" AnchorPane.bottomAnchor="109.8" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="7.80000000000004" AnchorPane.topAnchor="75.0">
+                                 <Button fx:id="markComplete" focusTraversable="false" layoutX="19.0" layoutY="75.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="138.0" text="Mark as complete" textFill="#ffffffc4" AnchorPane.bottomAnchor="109.8" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="7.80000000000004" AnchorPane.topAnchor="75.0">
                                     <font>
                                        <Font name="Impact" size="12.0" />
                                     </font>
                                  </Button>
-                                 <Button layoutX="19.0" layoutY="125.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Enter full-screen view" textFill="#81acc1" AnchorPane.bottomAnchor="59.80000000000001" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="7.80000000000004" AnchorPane.topAnchor="125.0">
+                                 <Button fx:id="EnterFullScreen" layoutX="19.0" layoutY="125.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Enter Task view" textFill="#81acc1" AnchorPane.bottomAnchor="59.80000000000001" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="7.80000000000004" AnchorPane.topAnchor="125.0">
                                     <font>
                                        <Font name="Impact" size="11.0" />
                                     </font>
@@ -177,7 +180,7 @@
                               <children>
                                  <DatePicker fx:id="datePicker" focusTraversable="false" layoutX="15.0" layoutY="26.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="118.0" AnchorPane.bottomAnchor="160.4" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.80000000000004" AnchorPane.topAnchor="26.0" />
                                  <CheckBox fx:id="urgentCheckbox" focusTraversable="false" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="110.0" text="Mark as urgent" AnchorPane.bottomAnchor="118.4" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="20.80000000000004" AnchorPane.topAnchor="76.0" />
-                                 <MenuButton layoutX="29.0" layoutY="122.0" mnemonicParsing="false" text="Priority" AnchorPane.bottomAnchor="64.4" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="48.80000000000004" AnchorPane.topAnchor="122.0">
+                                 <MenuButton fx:id="prioritySetterBox" layoutX="29.0" layoutY="122.0" mnemonicParsing="false" text="Priority" AnchorPane.bottomAnchor="64.4" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="48.80000000000004" AnchorPane.topAnchor="122.0">
                                    <items>
                                      <MenuItem mnemonicParsing="false" text="Action 1" />
                                      <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -187,7 +190,7 @@
                            </AnchorPane>
                            <AnchorPane layoutX="869.0" layoutY="5.0" prefHeight="200.0" prefWidth="164.0">
                               <children>
-                                 <Button layoutX="15.0" layoutY="46.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="ADD  task" textFill="#88c1f7" AnchorPane.bottomAnchor="127.6" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.599999999999994" AnchorPane.topAnchor="46.0">
+                                 <Button fx:id="AddTask" layoutX="15.0" layoutY="46.0" mnemonicParsing="false" onAction="#AddTaskButton" prefHeight="26.0" prefWidth="138.0" text="ADD  task" textFill="#88c1f7" AnchorPane.bottomAnchor="127.6" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.599999999999994" AnchorPane.topAnchor="46.0">
                                     <font>
                                        <Font name="Impact" size="13.0" />
                                     </font>
@@ -195,7 +198,7 @@
                                        <Reflection />
                                     </effect>
                                  </Button>
-                                 <Button fx:id="completeButton1" focusTraversable="false" layoutX="15.0" layoutY="117.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Clear" textFill="#ffffffc7" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="117.0">
+                                 <Button fx:id="clear" focusTraversable="false" layoutX="15.0" layoutY="117.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Clear" textFill="#ffffffc7" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="117.0">
                                     <font>
                                        <Font name="Impact" size="12.0" />
                                     </font>
@@ -217,7 +220,19 @@
                                              <Font name="Georgia Bold Italic" size="20.0" />
                                           </font>
                                        </Label>
-                                       <ListView fx:id="taskListDone" layoutX="16.0" layoutY="36.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="485.0" prefWidth="538.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0" />
+                                       <ScrollPane fx:id="todoBox" layoutX="7.0" layoutY="44.0" prefHeight="494.0" prefWidth="602.0" AnchorPane.bottomAnchor="9.600000000000023" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="5.800000000000068" AnchorPane.topAnchor="44.0">
+                                          <content>
+                                             <TableView fx:id="taskTable" prefHeight="490.0" prefWidth="609.0">
+                                               <columns>
+                                                 <TableColumn fx:id="titleCol" prefWidth="106.13330060243607" text="Title" />
+                                                 <TableColumn fx:id="TaskCol" minWidth="0.0" prefWidth="231.99993896484375" text="Description" />
+                                                   <TableColumn fx:id="DateCol" minWidth="0.0" prefWidth="104.800048828125" text="Deadline" />
+                                                   <TableColumn fx:id="PriorityCol" minWidth="0.0" prefWidth="75.4666748046875" text="Priority" />
+                                                   <TableColumn fx:id="CompletedCol" minWidth="0.0" prefWidth="75.4666748046875" text="Completed" />
+                                               </columns>
+                                             </TableView>
+                                          </content>
+                                       </ScrollPane>
                                     </children>
                                  </AnchorPane>
                               </center>

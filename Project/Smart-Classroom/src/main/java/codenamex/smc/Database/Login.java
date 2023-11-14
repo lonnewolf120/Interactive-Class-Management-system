@@ -10,13 +10,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-import codenamex.smc.sceneController;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static codenamex.smc.Database.DatabaseManager.connectDB;
 
 public class Login {
 
@@ -34,32 +36,32 @@ public class Login {
     private ImageView passEmpty;
     @FXML
     private Button submitButton;
-    public void loginAdmin(ActionEvent e)
-    {
-        String sql_command ="SELECT * FROM login_info WHERE username = ? AND password = ?;";
-        Connection connect = DatabaseManager.connectDB();
-        try
-        {
-//            assert connect != null;
-            PreparedStatement prepare = connect.prepareStatement(sql_command);
+    private static int userId;
+    public void loginAdmin(ActionEvent e) {
+        userId = -1; // Initialize with an invalid value if the login is unsuccessful
 
-            prepare.setString(1,username.getText());
-            prepare.setString(2,password.getText());
-//            prepare.setString(3,password.getText());
+        String sql_command = "SELECT user_id FROM login_info WHERE username = ? AND password = ?;";
+        Connection connect = connectDB();
+
+        try {
+            PreparedStatement prepare = connect.prepareStatement(sql_command);
+            prepare.setString(1, username.getText());
+            prepare.setString(2, password.getText());
 
             ResultSet result = prepare.executeQuery();
 
-            if(result.next()) {
-//                sceneController.switchControlsAction("homepage/homepage-tasks-dark.fxml",e);
+            if (result.next()) {
+                userId = result.getInt("user_id"); // Get the user_id if the login is successful
                 sceneController.switchControlsAction("homepage/homepage-tasks.fxml", e);
-//                  switchControlsAction("Dashboard.fxml",e);
-
+            } else {
+                afterLoginText.setText("Login Credentials don't match. Try again😅");
             }
-            else
-                afterLoginText.setText("Login Credentials doesn't match. Try again😅");
+        } catch (Exception exc) {
+            exc.printStackTrace();
         }
-        catch (Exception exc){exc.printStackTrace();}
+
     }
+    public static int getUserId(){return userId;}
 
     public void loginSubmitButton(ActionEvent e) throws IOException {
         userEmpty.setVisible(username.getText().isEmpty());
@@ -87,4 +89,5 @@ public class Login {
     public void switchToSignup(MouseEvent e) throws IOException {
         sceneController.switchToSignup(e);
     }
+
 }

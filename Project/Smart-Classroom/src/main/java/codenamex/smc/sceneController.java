@@ -45,7 +45,7 @@ public class sceneController {
         });
     }
     public static void switchControls(MouseEvent e, String view) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
+        root = FXMLLoader.load((Objects.requireNonNull(sceneController.class.getResource(view))));
         stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
         MoveAbleWindow();   //Moveable window option
         scene = new Scene(root);

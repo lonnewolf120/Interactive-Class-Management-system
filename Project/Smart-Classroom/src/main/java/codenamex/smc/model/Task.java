@@ -1,20 +1,27 @@
 package codenamex.smc.model;
 
+import com.mysql.cj.conf.StringProperty;
+
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class Task {
     private Integer priority;
     private String headline;
     private String description;
-    private long deadline;
+    private Date deadline;      //this is the sql Date datatype
     private Boolean completed;
 
     public Task(){}
-    public Task(Integer priority, String headline, String description, long deadline, Boolean completed) {
+    public Task(Integer priority, String headline, String description, Date deadline, Boolean completed) {
         this.priority = priority;
         this.headline = headline;
         this.description = description;
         this.deadline = deadline;
         this.completed = completed;
     }
+
+
 
     public Integer getPriority() {
         return priority;
@@ -40,11 +47,11 @@ public class Task {
         this.description = description;
     }
 
-    public long getDeadline() {
+    public Date getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(long deadline) {
+    public void setDeadline(Date deadline) {
         this.deadline = deadline;
     }
 
@@ -55,4 +62,6 @@ public class Task {
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
+
+
 }

@@ -1,7 +1,5 @@
 package codenamex.smc.Database;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 //# Establish Connection
 public class DatabaseManager extends Configs{
@@ -20,6 +18,7 @@ public class DatabaseManager extends Configs{
         catch(ClassNotFoundException | SQLException e){e.printStackTrace();}
         return connect;
     }
+
 
 }
 

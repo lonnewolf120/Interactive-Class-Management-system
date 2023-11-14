@@ -8,6 +8,7 @@ module java.codenamex.smc {
 
     opens codenamex.smc to javafx.fxml;
     opens codenamex.smc.todo_deprecated to javafx.fxml;
+    opens codenamex.smc.model to javafx.base;
     exports codenamex.smc;
     opens codenamex.smc.Database to javafx.fxml;
     exports codenamex.smc.Database;
