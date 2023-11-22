@@ -5,6 +5,7 @@ module java.codenamex.smc {
     requires java.sql;
     requires mysql.connector.j;
     requires fontawesomefx;
+    requires java.desktop;
 //    requires MaterialFX;
 
     opens codenamex.smc to javafx.fxml;

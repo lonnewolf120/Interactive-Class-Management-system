@@ -2,7 +2,6 @@
 
 <!--<?import com.jfoenix.controls.Button?>-->
 
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
@@ -26,8 +25,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="window" prefHeight="783.0" prefWidth="1227.0"
-            xmlns="http://javafx.com/javafx/20.0.1" fx:controller="codenamex.smc.dashboard">
+<BorderPane fx:id="window" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.dashboard">
    <left>
       <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
          <children>
@@ -105,18 +103,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="TRASH">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="43.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../images/Logos/Trash.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
                <padding>
                   <Insets top="15.0" />
@@ -168,12 +154,7 @@
                                        <Font name="Impact" size="12.0" />
                                     </font>
                                  </Button>
-                                 <Button fx:id="clearButton" focusTraversable="false" layoutX="19.0" layoutY="140.0" mnemonicParsing="false" onAction="#clearPressed" prefHeight="31.0" prefWidth="65.0" text="Clear" textFill="#ffffffc7" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="140.0">
-                                    <font>
-                                       <Font name="Impact" size="12.0" />
-                                    </font>
-                                 </Button>
-                                 <Button fx:id="clearButton1" focusTraversable="false" layoutX="96.0" layoutY="140.0" mnemonicParsing="false" onAction="#undoClear" prefHeight="31.0" prefWidth="65.0" text="Clear" textFill="#ffffffc7">
+                                 <Button fx:id="clearButton" focusTraversable="false" layoutX="19.0" layoutY="140.0" mnemonicParsing="false" onAction="#clearPressed" prefHeight="31.0" prefWidth="141.0" text="Clear" textFill="#ffffffc7" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="140.0">
                                     <font>
                                        <Font name="Impact" size="12.0" />
                                     </font>
