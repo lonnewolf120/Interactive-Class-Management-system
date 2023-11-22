@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
+        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("/codenamex/smc/login.fxml"))));
 
         stage.initStyle(StageStyle.TRANSPARENT);
         ViewStyles.MoveAbleWindow(stage,root);   //Moveable window option

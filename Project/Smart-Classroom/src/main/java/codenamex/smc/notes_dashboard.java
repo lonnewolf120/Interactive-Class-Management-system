@@ -2,6 +2,7 @@ package codenamex.smc;
 
 import codenamex.smc.design.ToggleSwitch;
 import codenamex.smc.model.Task;
+import codenamex.smc.model.TaskProperty;
 import codenamex.smc.todo.add_item_controller;
 import javafx.animation.Animation;
 import javafx.animation.ScaleTransition;
@@ -71,6 +72,7 @@ public class notes_dashboard implements Initializable {
     @FXML
     private TableView taskTableView;
     private Integer priority;
+    private Integer update;
 
     public notes_dashboard() {
     }
@@ -129,9 +131,10 @@ public class notes_dashboard implements Initializable {
     }
     public void AddTaskButton(ActionEvent e)
     {
+        update = 0;
         Boolean isComplete = markComplete.isPressed();
-        Task task = new Task(priority,taskTitile.getText(), descriptionText.getText(), Date.valueOf(datePicker.getValue()),isComplete);
-        add_item_controller.insert(task);
+        TaskProperty task = new TaskProperty(priority,taskTitile.getText(), descriptionText.getText(), Date.valueOf(datePicker.getValue()),isComplete);
+        add_item_controller.edit(task,update);
 
         //#Animation
         ScaleTransition pulse = new ScaleTransition(Duration.seconds(1), AddTask);

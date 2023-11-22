@@ -1,6 +1,6 @@
 package codenamex.smc.todo_deprecated;
 
-import codenamex.smc.HelloApplication;
+import main.java.codenamex.smc.HelloApplication;
 import codenamex.smc.todo_deprecated.Data.OtherData;
 import codenamex.smc.todo_deprecated.Data.TodoData;
 import javafx.event.ActionEvent;
@@ -77,7 +77,7 @@ public class Dashboard implements Initializable {
             contentArea.getChildren().add(fxml.load());
 
         } catch (IOException ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

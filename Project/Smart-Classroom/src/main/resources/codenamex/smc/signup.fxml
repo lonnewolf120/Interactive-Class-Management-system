@@ -21,10 +21,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="433.0" prefWidth="737.0"
-            style="-fx-background-color: #333333; -fx-border-color: orange;" xmlns="http://javafx.com/javafx/20.0.1"
-            fx:controller="codenamex.smc.Database.RegisterUser">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0" style="-fx-background-color: #333333; -fx-border-color: orange;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.Database.RegisterUser">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -160,8 +157,8 @@
             </Label>
             <MenuButton fx:id="institute" layoutX="185.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Institute">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem mnemonicParsing="false" text="MIST" />
+                <MenuItem mnemonicParsing="false" text="BUET" />
               </items>
             </MenuButton>
             <Label layoutX="187.0" layoutY="278.0" text="Select Institute" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
@@ -196,5 +193,6 @@
             </Label>
          </children>
       </Pane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

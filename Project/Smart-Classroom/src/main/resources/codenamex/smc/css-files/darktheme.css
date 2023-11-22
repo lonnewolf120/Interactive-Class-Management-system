@@ -26,7 +26,15 @@
 .datepicker{
     -fx-prompt-text-fill: white;
 }
-
+.round-button {
+    -fx-background-radius: 50%; /* Make the button round by setting the background radius to 50% */
+    -fx-padding: 10px; /* Set padding to provide some space inside the button */
+    -fx-text-fill: white; /* Set the text color to white */
+    -fx-font-size: 14px; /* Set the font size of the text */
+}
+.round-button:hover {
+    -fx-background-color: #00548A; /* Change the background color on hover */
+}
 .titulo{
     -fx-font-weight: bold;
     -fx-font-size: 18px;
