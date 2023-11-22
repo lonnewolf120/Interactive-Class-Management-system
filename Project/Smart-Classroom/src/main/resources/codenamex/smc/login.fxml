@@ -16,7 +16,10 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0" style="-fx-background-color: #333333; -fx-border-color: orange;" styleClass="root" stylesheets="@css-files/custom.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.Database.Login">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0"
+            style="-fx-background-color: #333333; -fx-border-color: orange;" styleClass="root" stylesheets="@css-files/custom.css"
+            xmlns="http://javafx.com/javafx/20.0.1" fx:controller="codenamex.smc.Database.Login">
    <Pane layoutX="1.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0">
       <children>
          <ImageView fitHeight="430.0" fitWidth="386.0" layoutX="1.0" layoutY="-28.0" pickOnBounds="true">

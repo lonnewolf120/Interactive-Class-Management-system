@@ -140,12 +140,12 @@
                   <Font name="Impact" size="23.0" />
                </font>
             </Label>
-            <Button layoutX="919.0" layoutY="-2.0" onAction="#closeButton" prefHeight="42.0" prefWidth="81.0" style="-fx-background-color: #333333;" text="Exit" textFill="#fafafa" wrapText="true">
+            <Button layoutX="919.0" layoutY="-2.0"  prefHeight="42.0" prefWidth="81.0" style="-fx-background-color: #333333;" text="Exit" textFill="#fafafa" wrapText="true">
                <font>
                   <Font name="Segoe UI Black" size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="34.0" fitWidth="37.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/Logos/Close.png" />
                      </image>

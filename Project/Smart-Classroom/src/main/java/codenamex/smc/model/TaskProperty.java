@@ -28,9 +28,6 @@ public class TaskProperty {
     }
 
 
-    public BooleanProperty getCompleted() {
-        return completed;
-    }
 
 //    public void setCompleted(Boolean completed) {
 //        this.completed = completed;
@@ -68,10 +65,12 @@ public class TaskProperty {
         return description.get();
     }
 
-    public String getDeadline() {
-        return deadline.get();
+    public Date getDeadline() {
+        return Date.valueOf(deadline.get());
     }
-
+    public Boolean getCompleted() {
+        return completed.get();
+    }
     public boolean isCompleted() {
         return completed.get();
     }
