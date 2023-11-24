@@ -51,7 +51,7 @@ public class AboutController implements Initializable {
         Desktop desktop;
         if (Desktop.isDesktopSupported()
                 && (desktop = Desktop.getDesktop()).isSupported(Desktop.Action.MAIL)) {
-            URI mailto = new URI("mailto:abdelrahmanbayoumi1@gmail.com?");
+            URI mailto = new URI("mailto:iftgamesofficial@gmail.com?");
             desktop.mail(mailto);
         } else {
             // TODO fallback to some Runtime.exec(..) voodoo?
@@ -62,7 +62,7 @@ public class AboutController implements Initializable {
     @FXML
     private void githubAction(MouseEvent event) {
         try {
-            Desktop.getDesktop().browse(new URI("https://github.com/AbdelrahmanBayoumi"));
+            Desktop.getDesktop().browse(new URI("https://github.com/lonnewolf120"));
         } catch (Exception e) {
             System.out.println("Error in URL");
         }

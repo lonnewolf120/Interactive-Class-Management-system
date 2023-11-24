@@ -5,6 +5,7 @@
  */
 package codenamex.smc.notes.home;
 
+import codenamex.smc.Database.DatabaseManager;
 import codenamex.smc.notes.NoteController;
 import codenamex.smc.notes.NoteFX;
 //import com.jfoenix.controls.JFXDialog;
@@ -12,7 +13,6 @@ import codenamex.smc.notes.NoteFX;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -71,7 +71,7 @@ public class HomeController implements Initializable {
         System.out.println("HomeController -> initialize() ...");
         InitializeNotes();
         try {
-            AnchorPane aboutPane = FXMLLoader.load(getClass().getResource("/notes/home/about.fxml"));
+            AnchorPane aboutPane = FXMLLoader.load(getClass().getResource("/codenamex/smc/notes/home/about.fxml"));
             aboutDialog = new Dialog();
             isVisible=!isVisible;
         } catch (IOException ex) {
@@ -103,7 +103,7 @@ public class HomeController implements Initializable {
     private void AddNoteAction(ActionEvent event) {
         System.out.println("HomeController -> AddNoteAction() ...");
         try {
-            Parent newNoteFXML = FXMLLoader.load(getClass().getResource("/notes/newNote.fxml"));
+            Parent newNoteFXML = FXMLLoader.load(getClass().getResource("/codenamex/smc/notes/newNote.fxml"));
             Scene sc = new Scene(newNoteFXML);
             Stage stage = new Stage();
             stage.setScene(sc);
@@ -130,7 +130,7 @@ public class HomeController implements Initializable {
             int count = noteList.size();
             for (int i = 0; i < count; i++) {
                 try {
-                    Parent NoteFXML = FXMLLoader.load(getClass().getResource("/Note/Note.fxml"));
+                    Parent NoteFXML = FXMLLoader.load(getClass().getResource("/codenamex/smc/notes/Note.fxml"));
                     NoteController.textStatic.setText(noteList.get(i).getText());
                     NoteController.idStaitc.setText(noteList.get(i).getid() + "");
                     NoteController.APStatic.setStyle("-fx-background-color : " + noteList.get(i).getHexaColor() + ";");
@@ -150,7 +150,7 @@ public class HomeController implements Initializable {
         int count = noteList.size();
         for (int i = 0; i < count; i++) {
             try {
-                Parent NoteFXML = FXMLLoader.load(getClass().getResource("/Note/Note.fxml"));
+                Parent NoteFXML = FXMLLoader.load(getClass().getResource("/codenamex/smc/notes/Note.fxml"));
                 NoteController.textStatic.setText(noteList.get(i).getText());
                 NoteController.idStaitc.setText(noteList.get(i).getid() + "");
                 NoteController.APStatic.setStyle("-fx-background-color : " + noteList.get(i).getHexaColor() + ";");
@@ -165,8 +165,9 @@ public class HomeController implements Initializable {
     private void createNotesTable() {
         System.out.println("HomeController -> createNotesTable() ...");
         try {
-            Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
+//            Class.forName("org.hsqldb.jdbcDriver");
+            con = DatabaseManager.connectDB();
+//            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -191,8 +192,9 @@ public class HomeController implements Initializable {
         System.out.println("HomeController -> getNumOfNotes() ...");
         int n = 0;
         try {
-            Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
+//            Class.forName("org.hsqldb.jdbcDriver");
+            con = DatabaseManager.connectDB();
+//            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -219,8 +221,9 @@ public class HomeController implements Initializable {
         System.out.println("HomeController -> insert() ...");
         String sqlString = "INSERT INTO notes (text,color) values (?,?)";
         try {
-            Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
+            con = DatabaseManager.connectDB();
+//            Class.forName("org.hsqldb.jdbcDriver");
+//            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -250,8 +253,9 @@ public class HomeController implements Initializable {
             sqlString = "SELECT * FROM notes " + s;
         }
         try {
-            Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
+            con = DatabaseManager.connectDB();
+//            Class.forName("org.hsqldb.jdbcDriver");
+//            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }

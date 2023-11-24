@@ -5,17 +5,15 @@
  */
 package codenamex.smc.notes;
 
-import codenamex.smc.notes.home.HomeController;
+import codenamex.smc.Database.DatabaseManager;
 //import com.jfoenix.controls.JFXTextArea;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,8 +58,9 @@ public class NoteController implements Initializable {
         System.out.println("NoteController -> editAction() ...");
         String sqlString = "Update notes set text = ? where id = ?";
         try {
-            Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
+            con = DatabaseManager.connectDB();
+//            Class.forName("org.hsqldb.jdbcDriver");
+//            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -88,8 +87,9 @@ public class NoteController implements Initializable {
         System.out.println("NoteController -> delete() ...");
         String sqlString = "DELETE FROM notes WHERE id =  ?";
         try {
-            Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
+            con = DatabaseManager.connectDB();
+//            Class.forName("org.hsqldb.jdbcDriver");
+//            con = DriverManager.getConnection("jdbc:hsqldb:file:db/NoteDatabase", "SA", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -109,7 +109,7 @@ public class NoteController implements Initializable {
         }
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/app/Home.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/codenamex/smc/Home.fxml"));
             id.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex);

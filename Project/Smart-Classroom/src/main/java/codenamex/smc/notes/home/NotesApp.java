@@ -21,7 +21,7 @@ public class NotesApp extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/img/yellow-icon.png")));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/Logos/notes2.png")));
         stage.setTitle("Note");
         stage.show();
     }
